@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Listbox } from "@headlessui/react";
+import React, { useState, useRef } from "react";
 import { useFloating, shift, flip, size, autoUpdate } from "@floating-ui/react";
+import { Listbox } from "@headlessui/react";
 import { Check, ChevronDown } from "lucide-react";
 
 const Dropdown = ({
