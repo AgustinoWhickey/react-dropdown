@@ -43,7 +43,7 @@ const Dropdown = ({ options, multiple = true, enableSearch = true, usePortal = f
       {filteredOptions.map((option) => (
         <li
           key={option.value}
-          className={`p-2 cursor-pointer hover:bg-blue-100 ${
+          className={`p-2 cursor-pointer hover:bg-blue-100 text-black ${
             multiple && selected.some((item) => item.value === option.value)
               ? "bg-blue-200"
               : ""

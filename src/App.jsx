@@ -1,23 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import DropdownPage from "./pages/dropdown";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Dropdown from "./components/Dropdown";
 
-function App() {
+function HomePage() {
+  return <h1>Home Page</h1>;
+}
 
+function DropdownPage() {
   const options = [
-    { value: "apple", label: "Apple" },
-    { value: "banana", label: "Banana" },
-    { value: "cherry", label: "Cherry" },
+    { label: "Apple", value: "apple" },
+    { label: "Banana", value: "banana" },
+    { label: "Cherry", value: "cherry" },
   ];
 
   return (
-    <div className="flex justify-center min-h-screen items-center">
-      {/* <LoginPage></LoginPage> */}
-      <DropdownPage options={options} multiple></DropdownPage>
+    <div className="p-5">
+      <h2 className="text-xl font-bold mb-4">Dropdown Component</h2>
+      <Dropdown options={options} multiple withSearch />
     </div>
-  )
+  );
 }
 
-export default App
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/dropdown" element={<DropdownPage />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
